@@ -1,12 +1,24 @@
 import React from 'react';
-import { Form, Input } from 'antd';
-import { Link } from 'react-router-dom'; // Add this import
+import { Form, Input,message } from 'antd';
+import { Link,useNavigate } from 'react-router-dom'; 
+import axios from 'axios';
+
 
 const Register = () => {
+    const navigate = useNavigate();
     //submit logic
-    const submitHandler = (values) => {
-        console.log('Form submitted with values:', values);
-        // Here you can add your registration logic, like calling an API
+    const submitHandler = async(values) => {
+        try{
+            await axios.post('/users/register', values);
+            message.success('Registration successful');
+            navigate('/login');
+
+        } catch (error) {
+            message.error('Registration failed. Please try again.');
+
+        }
+        
+        
     };
   return (
     <>

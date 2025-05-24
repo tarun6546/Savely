@@ -2,6 +2,7 @@ import {Routes, Route} from 'react-router-dom';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import Register from './pages/Register';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<h1>Home Page</h1>} />
         <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/contact' element={<h1>Contact Page</h1>} />
       </Routes>
     </>
