@@ -14,8 +14,8 @@ const Register = () => {
       setLoading(true);
       console.log('Form values:', values);
 
-      // Make API call to register
-      const response = await axios.post("http://localhost:8080", values);
+      // Make API callto register
+      const response = await axios.post("http://localhost:8080/api/users/register", values);
       console.log('Response:', response.data);
 
       if (response.data.success) {
