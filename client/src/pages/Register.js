@@ -32,7 +32,7 @@ const Register = () => {
     }
   };
 
-  // Prevent logged inusers from accessing register page
+  // Prevent loggedinusers from accessing register page
   useEffect(() => {
     if (localStorage.getItem("user")) {
       navigate("/");
